@@ -1,4 +1,4 @@
-package com.example.autolanguage
+package com.baraklevy20.autolanguage
 
 import android.os.Build
 import android.support.v7.widget.RecyclerView
@@ -10,7 +10,7 @@ import android.view.ViewGroup
 import android.widget.*
 
 
-import com.example.autolanguage.TranslationFragment.OnListFragmentInteractionListener
+import com.baraklevy20.autolanguage.TranslationFragment.OnListFragmentInteractionListener
 
 import kotlinx.android.synthetic.main.listitem_translation.view.*
 

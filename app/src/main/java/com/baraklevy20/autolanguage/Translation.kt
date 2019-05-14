@@ -1,4 +1,4 @@
-package com.example.autolanguage
+package com.baraklevy20.autolanguage
 
 data class Translation(val translatedWord: String,
                        val sourceSentences: MutableList<String>,
