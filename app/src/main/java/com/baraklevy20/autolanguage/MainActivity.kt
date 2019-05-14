@@ -12,12 +12,25 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import com.baraklevy20.autolanguage.choose_image_tab.Image
+import com.baraklevy20.autolanguage.choose_translation_tab.Translation
+import com.baraklevy20.autolanguage.choose_image_tab.ImageFragment
+import com.baraklevy20.autolanguage.choose_translation_tab.TranslationFragment
 
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_main.view.*
 
-class MainActivity : AppCompatActivity(), TranslationFragment.OnListFragmentInteractionListener {
-    override fun onListFragmentInteraction(item: Translation) {
+class MainActivity :
+    AppCompatActivity(),
+    ImageFragment.OnImageInteractionListener,
+    TranslationFragment.OnTranslationInteractionListener {
+
+    override fun onTranslationInteraction(translation: Translation) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        TODO("remove images from images fragment")
+    }
+
+    override fun onImageInteraction(image: Image) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
@@ -80,13 +93,14 @@ class MainActivity : AppCompatActivity(), TranslationFragment.OnListFragmentInte
         override fun getItem(position: Int): Fragment {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            if (position == 1) return TranslationFragment.newInstance(1)
+            if (position == 0) return TranslationFragment.newInstance(1)
+            if (position == 1) return ImageFragment.newInstance(1)
             return PlaceholderFragment.newInstance(position + 1)
         }
 
         override fun getCount(): Int {
             // Show 3 total pages.
-            return 3
+            return 5
         }
     }
 

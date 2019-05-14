@@ -1,4 +1,4 @@
-package com.baraklevy20.autolanguage
+package com.baraklevy20.autolanguage.choose_translation_tab
 
 import android.os.Build
 import android.support.v7.widget.RecyclerView
@@ -8,28 +8,24 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import com.baraklevy20.autolanguage.R
 
 
-import com.baraklevy20.autolanguage.TranslationFragment.OnListFragmentInteractionListener
 
 import kotlinx.android.synthetic.main.listitem_translation.view.*
 
-/**
- * [RecyclerView.Adapter] that can display a [DummyItem] and makes a call to the
- * specified [OnListFragmentInteractionListener].
- * TODO: Replace the implementation with code for your data type.
- */
-class MyTranslationRecyclerViewAdapter(
+
+class TranslationAdapter (
     private val mValues: List<Translation>,
-    private val mListener: OnListFragmentInteractionListener?
-) : RecyclerView.Adapter<MyTranslationRecyclerViewAdapter.ViewHolder>() {
+    private val mListener: TranslationFragment.OnTranslationInteractionListener?
+) : RecyclerView.Adapter<TranslationAdapter.ViewHolder>() {
 
     private val mOnClickListener: View.OnClickListener
 
     init {
         mOnClickListener = View.OnClickListener { v ->
             val translation = v.tag as Translation
-            mListener?.onListFragmentInteraction(translation)
+            mListener?.onTranslationInteraction(translation)
         }
     }
 
